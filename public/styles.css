@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    background: linear-gradient(#3c3ebf, purple);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+    letter-spacing: 10px;
+    padding: 0.25em 0.5em;
+}
+
+header img{
+    height: 100%;
+}
+
+.meme{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+height: 500px;
+width: 500px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+text-align: center;
+padding: 1em;
+color: white;
+text-shadow: -2px 0 black, 0px 2px black, 2px 0 black, 0 -2px black;
+
+}
