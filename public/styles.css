@@ -19,6 +19,31 @@ header img{
     height: 100%;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 2em;
+    background-color:#ba67df;
+}
+
+label, input{
+    width: 100%;
+}
+
+input{
+    margin: 1em 0;
+}
+
 .meme{
     display: flex;
     flex-direction: column;
@@ -30,7 +55,10 @@ background-repeat: no-repeat;
 background-size: contain;
 text-align: center;
 padding: 1em;
-color: white;
+color: white
+;
 text-shadow: -2px 0 black, 0px 2px black, 2px 0 black, 0 -2px black;
+padding: 2em;
+background-color:purple;
 
 }

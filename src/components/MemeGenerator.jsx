@@ -43,7 +43,7 @@ class MemeGenerator extends Component {
 
     render() {
         return (
-            <div>
+            <main>
                 <form>
                     <label>
                             Top Text
@@ -62,7 +62,7 @@ class MemeGenerator extends Component {
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
-            </div>
+            </main>
         )
     }
 }
