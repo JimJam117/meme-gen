@@ -12,19 +12,14 @@ header{
     align-items: center;
     color: white;
     letter-spacing: 10px;
-    padding: 0.25em 0.5em;
-}
-
-header img{
-    height: 100%;
+    padding:0.5em 3em;
 }
 
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 1em;
+    padding: 1em 4em;
 }
 main form {
     display: flex;
@@ -32,6 +27,7 @@ main form {
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
+    max-width: 300px;
     padding: 2em;
     background-color:#ba67df;
 }
@@ -45,20 +41,41 @@ input{
 }
 
 .meme{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-height: 500px;
-width: 500px;
-background-position: center;
-background-repeat: no-repeat;
-background-size: contain;
-text-align: center;
-padding: 1em;
-color: white
-;
-text-shadow: -2px 0 black, 0px 2px black, 2px 0 black, 0 -2px black;
-padding: 2em;
-background-color:purple;
+    position: relative;
+    max-width: 300px;
+    text-align: center;
+    color: white;
+    text-shadow: -2px 0 black, 0px 2px black, 2px 0 black, 0 -2px black;
+}
 
+.top{
+    margin-top: 5px;
+    position: absolute;
+    padding: 0em;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+}
+.bottom{
+    margin-top: 5px;
+    position: absolute;
+    padding: 0em;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 500px) {
+    main{
+        padding: 0;
+        align-items: center;
+    }
+    header{
+        padding: 1em 0.25em;
+        justify-content: center;
+        text-align: center;  
+    }
+    header h1{
+        font-size: 1rem;
+    }
 }

@@ -21,18 +21,35 @@ class MemeGenerator extends Component {
         this.newMeme();
     }
 
-    newMeme() {
+    newMeme(e) {
         fetch('https://api.imgflip.com/get_memes')
             .then(response => response.json())
             .then(response => {
                 const memes = response.data
-
                 
                 this.setState(prevState => {
-                        return {imageUrl : memes['memes'][Math.floor((Math.random() * 100) + 1)]['url']}
+                        const meme = memes['memes'][Math.floor((Math.random() * 100) + 1)];
+
+                        // if meme is not undefined, upadte the state
+                        if (meme !== "undefined") {
+                            const url = meme['url'];
+                            return {
+                                imageUrl : url
+                            }
+                        }
+
+                        // if meme is undefined, run newMeme again
+                        else {
+                            return this.newMeme();
+                        }
                     }
-                    )
+                )
             })
+
+            // if e is an event, then prevent default
+            if (typeof e !== "undefined") {
+                e.preventDefault();
+            }
     }
 
     formHandler(e) {
@@ -44,7 +61,7 @@ class MemeGenerator extends Component {
     render() {
         return (
             <main>
-                <form>
+                <form onSubmit={this.newMeme}>
                     <label>
                             Top Text
                         <input value={this.state.topText} type="text" name="topText" onChange={this.formHandler}/>
@@ -55,10 +72,11 @@ class MemeGenerator extends Component {
                         <input value={this.state.bottomText} type="text" name="bottomText" onChange={this.formHandler}/>
                     </label>
 
-                    <button onSubmit={this.newMeme}>New Meme</button>
+                    <button type="submit">New Meme</button>
                 </form>
 
-                <div className="meme" style={{ backgroundImage : `url(${this.state.imageUrl})`}}>
+                <div className="meme">
+                    <img src={this.state.imageUrl} alt="meme" style={{width: '100%'}}/>
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
