@@ -20,6 +20,7 @@ main{
     flex-direction: column;
     margin-top: 1em;
     padding: 1em 4em;
+    font-family: cursive, sans-serif;
 }
 main form {
     display: flex;
@@ -38,6 +39,36 @@ label, input{
 
 input{
     margin: 1em 0;
+    padding: 0.5em;
+    border: none;
+    border-radius: 10px;
+}
+
+label{
+    margin-top: 2em;
+}
+
+h2{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+button{
+    margin-top: 2em;
+    padding: 1em;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.21s;
+}
+
+button:hover{
+    margin-top: 2em;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
 .meme{
@@ -45,6 +76,7 @@ input{
     max-width: 300px;
     text-align: center;
     color: white;
+    font-family: Impact, sans-serif;
     text-shadow: -2px 0 black, 0px 2px black, 2px 0 black, 0 -2px black;
 }
 
@@ -65,6 +97,19 @@ input{
     transform: translateX(-50%);
 }
 
+.links{
+    display: flex;
+justify-content: space-between;
+padding: 2em;
+background-color:
+    #6d1191;
+    margin: 4em 0 0 0;
+}
+.links a{
+    color: white;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 500px) {
     main{
         padding: 0;
@@ -77,5 +122,13 @@ input{
     }
     header h1{
         font-size: 1rem;
+    }
+    .links{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .links a{
+        padding: 1em 0;
     }
 }

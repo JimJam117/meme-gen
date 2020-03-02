@@ -61,7 +61,10 @@ class MemeGenerator extends Component {
     render() {
         return (
             <main>
+                <h2 style={{paddingBottom: 20}}>React.js Meme Generator using <strong>imgflip API</strong>.</h2>
+
                 <form onSubmit={this.newMeme}>
+                    <h2>Create a Meme</h2>
                     <label>
                             Top Text
                         <input value={this.state.topText} type="text" name="topText" onChange={this.formHandler}/>
@@ -80,7 +83,13 @@ class MemeGenerator extends Component {
                     <h2 className="top">{this.state.topText}</h2>
                     <h2 className="bottom">{this.state.bottomText}</h2>
                 </div>
+
+                <div className="links">
+                <a className="webLink" href="https://jsparrow.uk">James Sparrow</a>
+                <a className="webLink" href="https://api.imgflip.com/">imgflip API</a>
+                </div>    
             </main>
+            
         )
     }
 }
